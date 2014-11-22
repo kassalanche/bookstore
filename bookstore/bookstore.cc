@@ -4,8 +4,6 @@
 #include <vector>
 #include <string>
 
-#include <byte.h>
-
 using std::ostream;
 using std::vector;
 using std::string;
@@ -14,9 +12,7 @@ using std::string;
  * Constructors.
  */
 
-BookStore::BookStore(const string& name) {
-  this->set_name(name);
-}
+BookStore::BookStore(const string& name) : name_(name) { /* Empty. */ }
 
 /**
  * Accessors and mutators.
@@ -30,10 +26,6 @@ vector<Book> BookStore::get_books() const {
   return books_;
 }
 
-void BookStore::set_name(const string& new_name) {
-  name_ = new_name;
-}
-
 void BookStore::add_book(const Book& new_book) {
   books_.push_back(new_book);
 }
@@ -42,7 +34,7 @@ void BookStore::add_book(const Book& new_book) {
 * Custom methods.
 */
 
-void BookStore::set_books_discount(const byte new_discount) {
+void BookStore::set_books_discount(const unsigned int new_discount) {
   for (Book book : books_) {
     book.set_discount(new_discount);
   }

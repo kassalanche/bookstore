@@ -1,18 +1,16 @@
-#ifndef BOOKSTORE_BOOKSTORE_H
-#define BOOKSTORE_BOOKSTORE_H
+#pragma once
 
 #include <vector>
 #include <string>
 
 #include "book.h"
-#include "byte.h"
 
 using std::vector;
 using std::string;
 
 class BookStore {
 private:
-  string name_;
+  const string name_;
   vector<Book> books_;
 public:
   BookStore(const string&);
@@ -20,12 +18,9 @@ public:
   string get_name() const;
   vector<Book> get_books() const;
 
-  void set_name(const string&);
   void add_book(const Book&);
 
-  void set_books_discount(const byte);
+  void set_books_discount(const unsigned int);
 
   BookStore& operator+=(const Book&);
 };
-
-#endif
