@@ -34,7 +34,7 @@ double Book::get_price() const {
 }
 
 unsigned int Book::get_discount() const {
-  return (int)discount_;
+  return discount_;
 }
 
 void Book::set_price(const double& new_price) {
