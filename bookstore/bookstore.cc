@@ -31,8 +31,8 @@ void BookStore::add_book(const Book& new_book) {
 }
 
 /**
-* Custom methods.
-*/
+ * Custom methods.
+ */
 
 void BookStore::set_books_discount(const unsigned int new_discount) {
   for (Book book : books_) {

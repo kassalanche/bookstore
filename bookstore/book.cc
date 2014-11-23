@@ -62,7 +62,7 @@ ostream& operator<<(ostream& stream, const Book& book) {
          << "Author: " << book.get_author() << endl
          << "Title: " << book.get_title() << endl
          << "Price: " << book.get_price() << endl
-         << "Discount: " << (int)book.get_discount() << endl
+         << "Discount: " << book.get_discount() << endl
          << "Real price: " << book.get_real_price() << endl
          << "----------------------------------------" << endl;
   return stream;
