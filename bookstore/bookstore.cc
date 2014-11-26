@@ -12,7 +12,8 @@ using std::string;
  * Constructors.
  */
 
-BookStore::BookStore(const string& name) : name_(name) { /* Empty. */ }
+BookStore::BookStore(const string& name) : name_(name) { /* Empty */ }
+BookStore::BookStore() : BookStore("Unknown bookstore") { /* Empty */ }
 
 /**
  * Accessors and mutators.
@@ -34,8 +35,8 @@ void BookStore::add_book(const Book& new_book) {
  * Custom methods.
  */
 
-void BookStore::set_books_discount(const unsigned int new_discount) {
-  for (Book book : books_) {
+void BookStore::set_books_discount(const Book::Discount new_discount) {
+  for (Book& book : books_) {
     book.set_discount(new_discount);
   }
 }
@@ -47,4 +48,12 @@ void BookStore::set_books_discount(const unsigned int new_discount) {
 BookStore& BookStore::operator+=(const Book& operand) {
   this->add_book(operand);
   return *this;
+}
+
+ostream& operator<<(ostream& stream, const BookStore& bookstore) {
+  for (Book book : bookstore.get_books()) {
+    stream << book;
+  }
+
+  return stream;
 }
