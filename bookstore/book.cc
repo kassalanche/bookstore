@@ -1,8 +1,10 @@
 #include "book.h"
 
+#include <stdexcept>
 #include <iostream>
 #include <string>
 
+using std::invalid_argument;
 using std::ostream;
 using std::endl;
 using std::string;
@@ -44,11 +46,19 @@ Book::Discount Book::get_discount() const {
 }
 
 void Book::set_price(const Price& new_price) {
-  price_ = new_price;
+  if (new_price < 0) {
+    throw invalid_argument("Incorrect price.")
+  } else {
+    price_ = new_price;
+  }
 }
 
 void Book::set_discount(const Discount new_discount) {
-  discount_ = new_discount;
+  if (new_discount < 0 || new_discount > 100) {
+    throw invalid_argument("Incorrect discount.")
+  } else {
+    discount_ = new_discount;
+  }
 }
 
 /**
