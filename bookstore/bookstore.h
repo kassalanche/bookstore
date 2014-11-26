@@ -21,6 +21,7 @@ public:
   void add_book(const Book&);
 
   void set_books_discount(const Book::Discount);
+  Book get_cheapest_book(const bool) const;
 
   BookStore& operator+=(const Book&);
 

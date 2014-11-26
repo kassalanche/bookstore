@@ -13,7 +13,8 @@ public:
 
   Book(const string&, const string&, const Price&, const Discount);
   Book(const string&, const string&, const Price&);
-
+  Book(const Book&);
+  
   string get_title() const;
   string get_author() const;
   Price get_price() const;

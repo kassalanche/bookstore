@@ -25,6 +25,14 @@ Book::Book(const string& author, const string& title, const Price& price) :
   this->set_discount(0);
 }
 
+Book::Book(const Book& copy) : author_(copy.author_),
+                              title_(copy.title_),
+                              price_(copy.price_),
+                              discount_(copy.discount_) {
+  /* Empty */
+  
+}
+
 /**
  * Accessors and mutators.
  */
@@ -47,7 +55,7 @@ Book::Discount Book::get_discount() const {
 
 void Book::set_price(const Price& new_price) {
   if (new_price < 0) {
-    throw invalid_argument("Incorrect price.")
+    throw invalid_argument("Incorrect price.");
   } else {
     price_ = new_price;
   }
@@ -55,7 +63,7 @@ void Book::set_price(const Price& new_price) {
 
 void Book::set_discount(const Discount new_discount) {
   if (new_discount < 0 || new_discount > 100) {
-    throw invalid_argument("Incorrect discount.")
+    throw invalid_argument("Incorrect discount.");
   } else {
     discount_ = new_discount;
   }
