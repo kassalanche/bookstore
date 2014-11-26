@@ -26,11 +26,11 @@ Book::Book(const string& author, const string& title, const Price& price) :
 }
 
 Book::Book(const Book& copy) : author_(copy.author_),
-                              title_(copy.title_),
-                              price_(copy.price_),
-                              discount_(copy.discount_) {
+                               title_(copy.title_),
+                               price_(copy.price_),
+                               discount_(copy.discount_) {
   /* Empty */
-  
+
 }
 
 /**
