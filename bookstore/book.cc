@@ -39,17 +39,7 @@ Book::Price Book::get_price() const {
   return price_;
 }
 
-<<<<<<< HEAD
 Book::Discount Book::get_discount() const {
-=======
-unsigned int Book::get_discount() const {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
   return discount_;
 }
 
