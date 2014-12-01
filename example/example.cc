@@ -15,7 +15,7 @@ int main() {
    * Add some interesting books into our awesome bookstore.
    */
 
-  Book some_book = {"Shen", "How not to fail exams", 750, 10};
+  Book some_book = {"Shen A.", "How not to fail exams", 750, 10};
   bookstore += some_book;
 
   bookstore += Book("Tatiana M.", "C++ for dummies", 125, 25);
@@ -27,13 +27,13 @@ int main() {
    */
 
   cout << "----------------------------------------" << endl
-       << "Bookstore: " <<    bookstore.get_name()    << endl
+       << "Bookstore: " <<    bookstore.get_name()   << endl
        << "----------------------------------------" << endl
        << bookstore << endl;
 
   /**
-  * Set new discount to all books in bookstore.
-  */
+   * Set new discount to all books in bookstore.
+   */
 
   bookstore.set_books_discount(50);
 
@@ -41,8 +41,8 @@ int main() {
    * Find the cheapest book in bookstore and print information about it.
    */
 
-  cout << "----------------------------------------" << endl;
-  cout << "The cheapest book in bookstore is:" << endl;
+  cout << "----------------------------------------" << endl
+       << "The cheapest book in bookstore is:"       << endl;
   cout << bookstore.get_cheapest_book(true);
 
   return 0;
