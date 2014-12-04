@@ -27,9 +27,9 @@ int main() {
    */
 
   cout << "----------------------------------------" << endl
-       << "Bookstore: " <<    bookstore.get_name()   << endl
-       << "----------------------------------------" << endl
-       << bookstore << endl;
+       << "Bookstore: " <<   bookstore.get_name()    << endl
+       << "----------------------------------------" << endl;
+  cout << bookstore;
 
   /**
    * Set new discount to all books in bookstore.
@@ -41,9 +41,10 @@ int main() {
    * Find the cheapest book in bookstore and print information about it.
    */
 
-  cout << "----------------------------------------" << endl
-       << "The cheapest book in bookstore is:"       << endl;
-  cout << bookstore.get_cheapest_book(true);
+  cout << endl
+       << "----------------------------------------" << endl
+       << "The cheapest book in bookstore is:"       << endl
+       << bookstore.get_cheapest_book(true);
 
   return 0;
 }
